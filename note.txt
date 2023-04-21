@@ -1,0 +1,9 @@
+can we create a nestedlist in flat list or custom list?
+yes we can
+but selection list gives us default option for preparing the nested list.
+we have to do everything manually in other flat list and custom list.
+
+
+where to use section list and where to use flat list?
+if the requirement is that we have single array and need to print single value, then we
+will use flat list. but if there is nested list, then the better option will be section list.
