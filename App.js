@@ -1,7 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
-import users from "./Data";
-
 export default function App() {
   return (
     <View>
@@ -12,7 +10,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   text: {
-    marginTop: 40,
+    marginTop: 45,
     fontSize: 40,
+    textAlign: "center",
   },
 });
