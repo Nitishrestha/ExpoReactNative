@@ -1,12 +1,12 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+const App = () => {
   return (
     <View>
       <Text style={styles.text}>Main Page</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   text: {
@@ -15,3 +15,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+export default App;
