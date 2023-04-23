@@ -3,16 +3,18 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 const App = () => {
   return (
     <View>
-      <Text style={styles.text}>Main Page</Text>
+      <Text style={styles.title}>Main Page</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  text: {
+  title: {
     marginTop: 45,
     fontSize: 40,
+    color: "white",
     textAlign: "center",
+    backgroundColor: "#bd5734",
   },
 });
 
