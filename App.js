@@ -10,6 +10,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   title: {
+    marginTop: 40,
     fontSize: 40,
     color: "white",
     textAlign: "center",
