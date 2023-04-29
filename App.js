@@ -1,6 +1,9 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, Text, View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Login } from "./Login";
+import { Home } from "./Home";
+
 const Stack = createNativeStackNavigator();
 const App = () => {
   const leftFunction = () => console.warn("Left Button Pressed");
@@ -40,30 +43,6 @@ const App = () => {
 const RightComponent = () => {
   const rightFunction = () => console.warn("Right Button Pressed");
   return <Button title="Right" onPress={rightFunction} />;
-};
-
-const Login = (props) => {
-  return (
-    <View style={styles.home}>
-      <Text style={styles.homeText}>Login Page</Text>
-      <Button
-        title="Go to Home Page"
-        onPress={() => props.navigation.navigate("Home")}
-      ></Button>
-    </View>
-  );
-};
-
-const Home = (props) => {
-  return (
-    <View style={styles.home}>
-      <Text style={styles.homeText}>Home Page</Text>
-      <Button
-        title="Go to Contact Page"
-        onPress={() => props.navigation.navigate("ContactUs")}
-      ></Button>
-    </View>
-  );
 };
 
 const ContactPage = (props) => {
