@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 const App = () => {
   return (
     <View>
-      <Text style={styles.title}>Main Page</Text>
+      <Text style={styles.title}>React Navigation Page</Text>
     </View>
   );
 };
