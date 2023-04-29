@@ -2,16 +2,21 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Login" component={Login} />
-        <Tab.Screen name="SignUp" component={SignUp} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <View style={{ flex: 1, marginTop: 40 }}>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Login" component={Login} />
+          <Tab.Screen name="SignUp" component={SignUp} />
+          <Tab.Screen name="About" component={SignUp} />
+          <Tab.Screen name="Contact" component={SignUp} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </View>
   );
 };
 
