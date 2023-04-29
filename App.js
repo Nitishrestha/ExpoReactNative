@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 const App = () => {
+  const leftFunction = () => console.warn("Left Button Pressed");
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -18,9 +19,12 @@ const App = () => {
           name="LogIn"
           component={Login}
           options={{
+            headerTitle: () => <Button title="Left" onPress={leftFunction} />,
+            // headerRight: () => <Button title="Right" />,
+            headerRight: () => <RightComponent />,
             title: "User Login",
             headerStyle: {
-              backgroundColor: "orange",
+              backgroundColor: "lightgreen",
             },
             headerTitleStyle: { fontSize: 30 },
             headerTintColor: "black",
@@ -31,6 +35,11 @@ const App = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
+};
+
+const RightComponent = () => {
+  const rightFunction = () => console.warn("Right Button Pressed");
+  return <Button title="Right" onPress={rightFunction} />;
 };
 
 const Login = (props) => {
