@@ -5,8 +5,27 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="LogIn" component={Login} />
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "lightblue",
+          },
+          headerTitleStyle: { fontSize: 25 },
+          headerTintColor: "black",
+        }}
+      >
+        <Stack.Screen
+          name="LogIn"
+          component={Login}
+          options={{
+            title: "User Login",
+            headerStyle: {
+              backgroundColor: "orange",
+            },
+            headerTitleStyle: { fontSize: 30 },
+            headerTintColor: "black",
+          }}
+        />
         <Stack.Screen name="ContactUs" component={ContactPage} />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
