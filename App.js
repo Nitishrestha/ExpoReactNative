@@ -1,21 +1,58 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-
+import { Button, StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+const Stack = createNativeStackNavigator();
 const App = () => {
   return (
-    <View>
-      <Text style={styles.title}>React Navigation Page</Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="LogIn" component={Login} />
+        <Stack.Screen name="ContactUs" component={ContactPage} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const Login = (props) => {
+  return (
+    <View style={styles.home}>
+      <Text style={styles.homeText}>Login Page</Text>
+      <Button
+        title="Go to Home Page"
+        onPress={() => props.navigation.navigate("Home")}
+      ></Button>
+    </View>
+  );
+};
+
+const Home = (props) => {
+  return (
+    <View style={styles.home}>
+      <Text style={styles.homeText}>Home Page</Text>
+      <Button
+        title="Go to Contact Page"
+        onPress={() => props.navigation.navigate("ContactUs")}
+      ></Button>
+    </View>
+  );
+};
+
+const ContactPage = (props) => {
+  return (
+    <View style={styles.home}>
+      <Text style={styles.homeText}>Contact Page</Text>
+      <Button
+        title="Logout"
+        onPress={() => props.navigation.navigate("LogIn")}
+      ></Button>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  title: {
-    marginTop: 40,
-    fontSize: 40,
-    color: "white",
-    textAlign: "center",
-    backgroundColor: "#bd5734",
-  },
+  home: { flex: 1, justifyContent: "center", alignItems: "center" },
+  homeText: { fontSize: 30, marginBottom: 20 },
 });
 
 export default App;
